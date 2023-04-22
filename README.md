@@ -1,26 +1,24 @@
 Minicoin integration/staging tree
 ================================
 
-http://www.minicoin.org
-
-Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Litecoin Developers
+Copyright (c) 2009-2014 Bitcoin Developers\
+Copyright (c) 2011-2014 Litecoin Developers\
 Copyright (c) 2023 Minicoin Developers
 
 What is Minicoin?
 ----------------
 
-Minicoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
- - 2.5 minute block targets
- - subsidy halves in 840k blocks (~4 years)
- - ~84 million total coins
-
-The rest is the same as Bitcoin.
- - 50 coins per block
+Minicoin is a mini version of Bitcoin using scrypt as a proof-of-work algorithm. Minicoin was originally forked from [Litecoin 0.8](https://github.com/litecoin-project/litecoin/tree/0.8).
+ - 15 minute block targets
+ - 150KB block size limit
+ - subsidy halves in 70,080 blocks (~2 years)
+    - halving stops once subsidy reaches 1 coin
+ - Unlimited coin supply
+ - 512 coins per block
  - 2016 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Minicoin client sofware, see http://www.minicoin.org.
+the Minicoin client sofware, see [releases](https://github.com/untrusting/minicoin/releases).
 
 License
 -------

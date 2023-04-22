@@ -1,8 +1,8 @@
 Minicoin 0.8.x BETA
 ====================
 
-Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Litecoin Developers
+Copyright (c) 2009-2014 Bitcoin Developers\
+Copyright (c) 2011-2014 Litecoin Developers\
 Copyright (c) 2023 Minicoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying

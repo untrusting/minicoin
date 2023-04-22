@@ -4,7 +4,8 @@ Minicoin integration/staging tree
 http://www.minicoin.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Minicoin Developers
+Copyright (c) 2011-2014 Litecoin Developers
+Copyright (c) 2023 Minicoin Developers
 
 What is Minicoin?
 ----------------

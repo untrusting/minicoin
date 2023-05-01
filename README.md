@@ -14,7 +14,7 @@ Minicoin is a mini version of Bitcoin using scrypt as a proof-of-work algorithm.
  - subsidy halves in 70,080 blocks (~2 years)
     - halving stops once subsidy reaches 1 coin
  - Unlimited coin supply
- - 512 coins per block
+ - 128 coins per block
  - 2016 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of

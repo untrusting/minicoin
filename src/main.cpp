@@ -1088,16 +1088,19 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 50 * COIN;
+    int64 nSubsidy = 128 * COIN;
 
-    // Subsidy is cut in half every 840000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 840000); // Minicoin: 840k blocks in ~4 years
+    // Subsidy is cut in half every 70,080 blocks, which will occur approximately every 2 years
+    nSubsidy >>= (nHeight / 70080); // Minicoin: 70,080 blocks in ~2 years
+
+    // The minimum subsidy is 1 coin
+    nSubsidy = std::max(nSubsidy, 1 * COIN);
 
     return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Minicoin: 3.5 days
-static const int64 nTargetSpacing = 2.5 * 60; // Minicoin: 2.5 minutes
+static const int64 nTargetSpacing = 15 * 60; // Minicoin: 15 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -2780,25 +2783,25 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "Yahoo! Finance 30/Apr/2023 Bitcoin Transactions Soar as Ordinals Barrel Past 2.5 Million, Notch Daily Record";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
+        txNew.vout[0].nValue = 128 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04afe2b67949af65c9c502bc18f2b1c522371bbd3c7824e23a61b982e59d618643fa5eed323f130656ed6775ec087012e58ac1c9d3f00036eba70c4c94a0a5521a") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1317972665;
+        block.nTime    = 1682981128;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2084524493;
 
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
+            block.nTime    = 1682981046;
             block.nNonce   = 385270584;
         }
 
